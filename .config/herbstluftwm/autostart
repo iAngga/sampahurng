@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+############################################################
+#                                                          #
+#    _   _ _____ ____  ____ ____ _____ _  ___   ___   __   #
+#   | | | | ____|  _ \| __ ) ___|_   _| |/ / | | \ \ / /   #
+#   | |_| |  _| | |_) |  _ \___ \ | | | ' /| | | |\ V /    #
+#   |  _  | |___|  _ <| |_) |__) || | | . \| |_| | | |     #
+#   |_| |_|_____|_| \_\____/____/ |_| |_|\_\\___/  |_|     #
+#                                                          #
+#                                                          #
+############################################################
+
+
 hc() {
     herbstclient "$@"
 }
@@ -8,7 +20,7 @@ hc emit_hook reload
 
 xsetroot -solid '#5A8E3A'
 picom & 
-polybar example &
+polybar njir&
 nitrogen --restore &
 setxkbmap -option caps:escape
 
@@ -27,8 +39,12 @@ hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c close
 hc keybind $Mod-Shift-b spawn firefox
-hc keybind $Mod-Shift-d spawn dmenu_run
-hc keybind $Mod-Shift-p spawn st xfce4-screenshooter -f -d 0.5 -s ~/Pictures/Screenshot\ from\ $(date +%F-%I-$M-%N).png
+hc keybind $Mod-Shift-d spawn dmenu_run -sb orange -sf black -l 2
+hc keybind $Mod-Shift-p spawn gnome-screenshot
+
+## alt
+hc keybind $Mod-Mod1-n spawn st ranger
+hc keybind $Mod-Mod1-l spawn ./Applications/LibreSprite-4fc8d53-x86_64_7145e7aa49c6c09e18af14c86341a125.AppImage
 
 # basic movement in tiling and floating mode
 # focusing clients
@@ -138,7 +154,7 @@ hc attr theme.urgent.color orange
 hc attr theme.inner_width 2
 hc attr theme.inner_color black
 hc attr theme.border_width 2
-hc attr theme.floating.border_width 4
+hc attr theme.floating.border_width 2
 hc attr theme.floating.outer_width 1
 hc attr theme.floating.outer_color black
 hc attr theme.active.inner_color '#ffe4e1'
@@ -181,9 +197,9 @@ hc unlock
 # hc detect_monitors
 
 # find the panel
-panel=~/.config/herbstluftwm/panel.sh
-[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
-for monitor in $(hc list_monitors | cut -d: -f1) ; do
-    # start it on each monitor
-    "$panel" "$monitor" &
-done
+#panel=~/.config/herbstluftwm/panel.sh
+#[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
+#for monitor in $(hc list_monitors | cut -d: -f1) ; do
+#    # start it on each monitor
+#    "$panel" "$monitor" &
+#done
