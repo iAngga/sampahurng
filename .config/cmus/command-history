@@ -1,7 +1,0 @@
-q
-add ~/Music
-fset unheard=play_count=0
-add ~/Musix
-update
-q!
-help
