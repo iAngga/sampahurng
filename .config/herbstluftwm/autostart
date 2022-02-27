@@ -1,17 +1,5 @@
 #!/usr/bin/env bash
 
-############################################################
-#                                                          #
-#    _   _ _____ ____  ____ ____ _____ _  ___   ___   __   #
-#   | | | | ____|  _ \| __ ) ___|_   _| |/ / | | \ \ / /   #
-#   | |_| |  _| | |_) |  _ \___ \ | | | ' /| | | |\ V /    #
-#   |  _  | |___|  _ <| |_) |__) || | | . \| |_| | | |     #
-#   |_| |_|_____|_| \_\____/____/ |_| |_|\_\\___/  |_|     #
-#                                                          #
-#                                                          #
-############################################################
-
-
 hc() {
     herbstclient "$@"
 }
@@ -22,20 +10,21 @@ xsetroot -solid '#5A8E3A'
 picom & 
 polybar njir&
 nitrogen --restore &
-setxkbmap -option caps:escape
+setxkbmap -option caps:escape &
+redshift &
 
 # remove all existing keybindings
 hc keyunbind --all
 
 # keybindings
 Mod=Mod4
-TermKu=st
+
 ## nobutton
-hc keybind $Mod-Return spawn $TermKu
-hc keybind $Mod-n spawn pcmanfm
+hc keybind $Mod-Return spawn st
+hc keybind $Mod-n spawn thunar
+hc keybind $Mod-b spawn pcmanfm -d
 
 ## shift
-hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c close
 hc keybind $Mod-Shift-b spawn firefox
@@ -45,6 +34,12 @@ hc keybind $Mod-Shift-p spawn gnome-screenshot
 ## alt
 hc keybind $Mod-Mod1-n spawn st ranger
 hc keybind $Mod-Mod1-l spawn ./Applications/LibreSprite-4fc8d53-x86_64_7145e7aa49c6c09e18af14c86341a125.AppImage
+hc keybind $Mod-Mod1-b spawn chromium
+hc keybind $Mod-Mod1-m spawn st cmus
+
+## more
+hc keybind $Mod-Mod1-Shift-q quit
+hc keybind $Mod-Mod1-Shift-d spawn xfce4-appfinder
 
 # basic movement in tiling and floating mode
 # focusing clients
@@ -157,9 +152,9 @@ hc attr theme.border_width 2
 hc attr theme.floating.border_width 2
 hc attr theme.floating.outer_width 1
 hc attr theme.floating.outer_color black
-hc attr theme.active.inner_color '#ffe4e1'
+hc attr theme.active.inner_color '#606060'
 hc attr theme.urgent.inner_color '#9A65B0'
-hc attr theme.normal.inner_color '#606060'
+hc attr theme.normal.inner_color '#323232'
 # copy inner color to outer_color
 for state in active urgent normal ; do
     hc substitute C theme.${state}.inner_color \
