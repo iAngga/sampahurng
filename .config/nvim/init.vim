@@ -3,9 +3,11 @@ call plug#begin ()
 	Plug 'vim-airline/vim-airline'
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'ap/vim-css-color'
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'sheerun/vim-polyglot'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'plasticboy/vim-markdown'
+  Plug 'junegunn/goyo.vim'
 call plug#end () 
 
 " stuff
@@ -49,3 +51,12 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" markdown
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_frontmatter=1
+let g:vim_markdown_conceal=0

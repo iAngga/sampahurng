@@ -4,7 +4,7 @@ PS1=" %B%{$fg[cyan]%}%{$fg[cyan]%}%M %{$fg[magenta]%}%~%{$reset_color%}%b "
 
 # completion
 autoload -U compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 
+zstyle ':completion:*' menu select matcher-list 'm:{a-z}={A-Z}'
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)	
