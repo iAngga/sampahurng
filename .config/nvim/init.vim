@@ -3,11 +3,11 @@ call plug#begin ()
 	Plug 'vim-airline/vim-airline'
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'ap/vim-css-color'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'sheerun/vim-polyglot'
-  Plug 'vim-airline/vim-airline-themes'
-  Plug 'plasticboy/vim-markdown'
-  Plug 'junegunn/goyo.vim'
+	Plug 'vim-airline/vim-airline-themes'
+	Plug 'plasticboy/vim-markdown'
+	Plug 'junegunn/goyo.vim'
 call plug#end () 
 
 " stuff
