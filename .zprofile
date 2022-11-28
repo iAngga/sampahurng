@@ -20,6 +20,7 @@ export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql_history"
 export LESSHISTFILE="-"
 
 # bin
